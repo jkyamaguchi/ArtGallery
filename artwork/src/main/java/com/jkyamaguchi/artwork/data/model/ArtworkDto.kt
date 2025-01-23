@@ -1,4 +1,4 @@
-package com.jkyamaguchi.artwork.data
+package com.jkyamaguchi.artwork.data.model
 
 import com.squareup.moshi.Json
 

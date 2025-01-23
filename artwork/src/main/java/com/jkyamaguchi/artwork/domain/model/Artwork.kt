@@ -1,4 +1,4 @@
-package com.jkyamaguchi.artwork.domain
+package com.jkyamaguchi.artwork.domain.model
 
 data class Artwork(
     val id: Long,

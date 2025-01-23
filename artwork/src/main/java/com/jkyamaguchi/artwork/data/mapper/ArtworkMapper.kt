@@ -1,7 +1,7 @@
 package com.jkyamaguchi.artwork.data.mapper
 
-import com.jkyamaguchi.artwork.data.ArtworkData
-import com.jkyamaguchi.artwork.domain.Artwork
+import com.jkyamaguchi.artwork.data.model.ArtworkData
+import com.jkyamaguchi.artwork.domain.model.Artwork
 
 fun ArtworkData.toModel(): Artwork {
     return Artwork(
