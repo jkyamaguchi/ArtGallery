@@ -6,20 +6,32 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.jkyamaguchi.artwork.domain.model.Artwork
+
 
 @Composable
 fun ArtworkListScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    viewModel: ArtworkListViewModel = hiltViewModel<ArtworkListViewModel>()
 ) {
-    val artworks: List<Artwork> = emptyList()
+    // State
+    val artworks = viewModel.artworks.observeAsState().value
 
+    // API call
+    LaunchedEffect(key1 = Unit) {
+        viewModel.fetchArtworks()
+    }
+
+    // UI
     LazyColumn(modifier = modifier) {
-        items(artworks) { artwork ->
+        items(artworks.orEmpty()) { artwork ->
             ArtworkRow(artwork = artwork)
         }
     }

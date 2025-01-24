@@ -1,9 +1,11 @@
 package com.jkyamaguchi.network.mapper
 
-fun <T> Result<T>.toModel(): T {
-    return if (this.isSuccess) {
-        this.getOrThrow()
+import retrofit2.Response
+
+fun <T> Response<T>.toModel(): T {
+    return if (this.isSuccessful) {
+        this.body() ?: error("The response is null")
     } else {
-        error("The result was not successful: ${this.exceptionOrNull()?.message}")
+        error("The response was not successful: ${this.errorBody()}")
     }
 }

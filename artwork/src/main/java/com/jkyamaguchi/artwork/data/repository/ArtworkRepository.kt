@@ -11,7 +11,7 @@ class ArtworkRepository @Inject constructor(
     private val api: ArtworkApi
 ) : IArtworkRepository {
 
-    override fun getArtworks(): List<Artwork> {
+    override suspend fun getArtworks(): List<Artwork> {
         return api.getArtworks()
             .toModel().data
             .map(ArtworkData::toModel)

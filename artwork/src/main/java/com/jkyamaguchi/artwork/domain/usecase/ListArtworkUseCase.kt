@@ -9,7 +9,7 @@ class ListArtworkUseCase @Inject constructor( // Hilt injects object
 ) : IListArtworkUseCase{
 
 
-    override fun invoke(): List<Artwork> {
+    override suspend operator fun invoke(): List<Artwork> {
         return repository.getArtworks()
     }
 

@@ -44,6 +44,8 @@ dependencies {
     implementation(libs.moshi)
 
     implementation(libs.hilt)
+    implementation(libs.hilt.navigation)
+    implementation(libs.androidx.runtime.livedata)
     debugImplementation(libs.ui.tooling)
     ksp(libs.hilt.compiler)
 

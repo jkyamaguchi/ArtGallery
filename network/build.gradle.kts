@@ -35,8 +35,9 @@ android {
 
 dependencies {
     implementation(libs.retrofit)
-    implementation(libs.moshi.converter)
     implementation(libs.okhttp)
+    implementation(libs.moshi.converter)
+    implementation(libs.moshi)
 
     implementation(libs.hilt)
     ksp(libs.hilt.compiler)

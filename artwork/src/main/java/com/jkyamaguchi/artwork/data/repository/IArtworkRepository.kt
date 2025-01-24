@@ -5,7 +5,7 @@ import com.jkyamaguchi.artwork.domain.model.Artwork
 
 interface IArtworkRepository {
 
-    fun getArtworks(): List<Artwork>
+    suspend fun getArtworks(): List<Artwork>
 
 
 }
