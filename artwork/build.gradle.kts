@@ -40,6 +40,8 @@ android {
 dependencies {
     implementation(project(":network"))
 
+    implementation(libs.coil)
+
     implementation(libs.retrofit)
     implementation(libs.moshi)
 

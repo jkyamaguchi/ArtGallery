@@ -9,6 +9,6 @@ data class ArtworkDto(
 data class ArtworkData(
     val id: Long,
     val title: String,
-    @Json(name = "image_id") val imageId: String,
+    @Json(name = "image_id") val imageId: String?,
     @Json(name = "artist_titles") val artists: List<String>
 )

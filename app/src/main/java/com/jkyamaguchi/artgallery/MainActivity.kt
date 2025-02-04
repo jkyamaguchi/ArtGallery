@@ -7,12 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.jkyamaguchi.artgallery.ui.theme.ArtGalleryTheme
-import com.jkyamaguchi.artwork.ui.ArtworkListScreen
+import com.jkyamaguchi.artwork.ui.ArtworkRoute
+import com.jkyamaguchi.artwork.ui.theme.ArtGalleryTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,7 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             ArtGalleryTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ArtworkListScreen(
+                    ArtworkRoute(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
